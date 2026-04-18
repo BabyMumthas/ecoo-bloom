@@ -1,5 +1,4 @@
 import { MapContainer, TileLayer, Marker, Tooltip, useMapEvents } from 'react-leaflet';
-import { useState, useEffect } from 'react';
 import L from 'leaflet';
 
 // Load Leaflet CSS from CDN (avoid PostCSS conflict)

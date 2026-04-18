@@ -27,7 +27,7 @@ const JobApplications = () => {
 
     const handleAdmit = async (appId) => {
         try {
-            const { data } = await axios.put(`/applications/${appId}/admit`);
+            await axios.put(`/applications/${appId}/admit`);
             setApps(apps.map(a => a._id === appId ? { ...a, status: 'admitted' } : a));
         } catch (error) {
             alert("Error admitting volunteer");

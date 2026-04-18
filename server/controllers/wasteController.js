@@ -189,7 +189,12 @@ Format nicely with emojis and clear sections. Keep it under 300 words.`;
 
         // Geocode the extracted location
         const geocodeResponse = await fetch(
-            `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(locationQuery)}&limit=1`
+            `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(locationQuery)}&limit=1`,
+            {
+                headers: {
+                    'User-Agent': 'EcoBloomApp/1.0 (local-dev)'
+                }
+            }
         );
         const geocodeData = await geocodeResponse.json();
 
